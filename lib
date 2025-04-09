@@ -1,9 +1,5 @@
 -- Services
 local TweenService = game:GetService("TweenService")
-local UIS = game:GetService("UserInputService")
-
--- Constants
-local dragging, dragInput, dragStart, startPos
 
 local UILib = {}
 
@@ -36,6 +32,10 @@ function UILib:CreateWindow(title)
 	MAIN.BorderSizePixel = 0
 	MAIN.Position = UDim2.new(0.348399252, 0, 0.156985864, 0)
 	MAIN.Size = UDim2.new(0, 482, 0, 437)
+	
+	
+	local UIS = game:GetService("UserInputService")
+	local dragging, dragInput, dragStart, startPos
 
 	Top.InputBegan:Connect(function(input)
 		if input.UserInputType == Enum.UserInputType.MouseButton1 then
@@ -101,7 +101,7 @@ function UILib:CreateWindow(title)
 	UINAME.Position = UDim2.new(0.031120332, 0, 0.175285563, 0)
 	UINAME.Size = UDim2.new(0, 62, 0, 23)
 	UINAME.Font = Enum.Font.Arial
-	UINAME.Text = title or "emesis"
+	UINAME.Text = title
 	UINAME.TextColor3 = Color3.fromRGB(255, 255, 255)
 	UINAME.TextScaled = true
 	UINAME.TextSize = 14.000
@@ -364,4 +364,7 @@ function UILib:CreateWindow(title)
 	return Frame
 end
 
-return _G.MAIN
+
+
+
+return UILib
